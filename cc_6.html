@@ -26,6 +26,16 @@
                 this.color = color; 
             }
         }
+
+        // Implement a method within the Ball constructor to draw the ball on the canvas using its current properties
+        draw()
+        {
+            ctx.beginPath()
+            ctx.arc(this.x, this.y, this.radius. 0, Math.PI*2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
     </script>
 </body>
 </html>
