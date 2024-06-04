@@ -1,4 +1,4 @@
-// U08282838
+<!--U08282838--> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +7,11 @@
     <title>Bouncing Ball Animation Challenge</title>
 </head>
 <body>
-    // Set up HTML canvas for animation
-    <canvas id="CanvasID" width="600" height="600"></canvas>
+    <!--Set up HTML canvas for animation-->
+    <canvas id="CanvasID" width="1200" height="750"></canvas>
     <script>
-        let canvas = document.getElementById(CanvasID);
-        let ctx = canvas.getContext(`2d`);
+        let canvas = document.getElementById(`CanvasID`);
+        let ctx = canvas.getContext('2d');
 
         // Create Ball constructor with initial properties
         class Ball
@@ -25,34 +25,35 @@
                 this.dy = dy;
                 this.color = color; 
             }
-        }
+        
 
-        // Implement a method within the Ball constructor to draw the ball on the canvas using its current properties
-        draw()
-        {
-            ctx.beginPath()
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-            ctx.closePath();
-        }
-
-        // Add update method with collision detection for Ball class
-        update()
-        {
-            this.x += this.dx;
-            this.y += this.dy;
-
-            if(this.x + this.radius > canvas.width || this.x - this.radius < 0) 
+            // Implement a method within the Ball constructor to draw the ball on the canvas using its current properties
+            draw()
             {
-                    this.dx = -this.dx;
-            }
-            if(this.y + this.radius > canvas.height || this.y - this.radius < 0) 
-            {
-                    this.dy = -this.dy;
+                ctx.beginPath()
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.closePath();
             }
 
-            this.draw()
+            // Add update method with collision detection for Ball class
+            update()
+            {             
+                this.x += this.dx;
+                this.y += this.dy;
+
+                if(this.x + this.radius > canvas.width || this.x - this.radius < 0) 
+                {
+                        this.dx = -this.dx;
+                }
+                if(this.y + this.radius > canvas.height || this.y - this.radius < 0) 
+                {
+                        this.dy = -this.dy;
+                }
+
+                this.draw()
+            }
         }
 
         // Implement animation using setInterval
@@ -64,7 +65,7 @@
             ball.update();
         }
 
-        setInterval(animate, 10);
+        setInterval(animate, 5);
     </script>
 </body>
 </html>
