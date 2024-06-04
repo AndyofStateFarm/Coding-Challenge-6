@@ -36,6 +36,25 @@
             ctx.fill();
             ctx.closePath();
         }
+
+        // Add update method with collision detection for Ball class
+        update()
+        {
+            this.x += this.dx;
+            this.y += this.dy;
+
+            if(this.x + this.radius > canvas.width || this.x - this.radius < 0) 
+            {
+                    this.dx = -this.dx;
+            }
+            if(this.y + this.radius > canvas.height || this.y - this.radius < 0) 
+            {
+                    this.dy = -this.dy;
+            }
+
+            this.draw()
+        }
+
     </script>
 </body>
 </html>
