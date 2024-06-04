@@ -12,7 +12,7 @@
     <script>
         let canvas = document.getElementById(`CanvasID`);
         let ctx = canvas.getContext('2d');
-
+        
         // Create Ball constructor with initial properties
         class Ball
         {
@@ -61,8 +61,12 @@
 
         function animate()
         {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
             ball.update();
+
+            // adds border to canvas
+            ctx.strokeStyle = "black" 
+            ctx.strokeRect(0, 0, 1200, 750);
         }
 
         setInterval(animate, 5);
