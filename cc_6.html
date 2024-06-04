@@ -55,6 +55,16 @@
             this.draw()
         }
 
+        // Implement animation using setInterval
+        let ball = new Ball(200, 160, 20, 2, 2, 'red');
+
+        function animate()
+        {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ball.update();
+        }
+
+        setInterval(animate, 10);
     </script>
 </body>
 </html>
